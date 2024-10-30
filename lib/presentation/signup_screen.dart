@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SignupPage extends StatelessWidget {
+class SignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade500,
+      backgroundColor: Colors.blue.shade300,
       appBar: AppBar(
-        toolbarHeight: 30.0,
-        backgroundColor: Colors.blue.shade500,
-        title: Text(
-          'Register Account',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-        ),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
@@ -21,17 +17,34 @@ class SignupPage extends StatelessWidget {
             Navigator.of(context).pop();
           },
         ),
+        title: Text(
+          'Register Account',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
       ),
-      body: Center(
+      body: SafeArea(
+        minimum: EdgeInsets.symmetric(vertical: 30),
         child: Padding(
-          padding: const EdgeInsets.all(15.0),
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: SingleChildScrollView(
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.3),
+                    spreadRadius: 3,
+                    blurRadius: 8,
+                    offset: Offset(0, 4),
+                  ),
+                ],
               ),
-              padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 50.0),
+              padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 36.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -39,25 +52,23 @@ class SignupPage extends StatelessWidget {
                   Stack(
                     children: [
                       CircleAvatar(
-                        radius: 60,
-                        backgroundImage: AssetImage(
-                            'assets/images/profile-picture.png'), // Placeholder image
-                        backgroundColor: Colors.grey[200],
+                        radius: 55,
+                        backgroundImage:
+                            AssetImage('assets/images/profile-picture.png'),
+                        backgroundColor: Colors.grey[300],
                       ),
                       Positioned(
-                        bottom: 0,
-                        right: 0,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white,
-                            border: Border.all(
-                              color: Colors.grey,
-                              width: 1.0,
-                            ),
-                          ),
+                        bottom: 4,
+                        right: 4,
+                        child: CircleAvatar(
+                          backgroundColor: Colors.blue.shade600,
+                          radius: 18,
                           child: IconButton(
-                            icon: Icon(Icons.camera_alt),
+                            icon: Icon(
+                              Icons.camera_alt,
+                              color: Colors.white,
+                              size: 18,
+                            ),
                             onPressed: () {
                               // Handle image picker logic here
                             },
@@ -66,7 +77,7 @@ class SignupPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 24),
 
                   // First Name Field
                   TextFormField(
@@ -144,27 +155,28 @@ class SignupPage extends StatelessWidget {
                       suffixIcon: Icon(Icons.visibility_off),
                     ),
                   ),
-                  SizedBox(height: 24),
-
+                  SizedBox(height: 30),
                   // Create Account Button
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {
-                        // Handle account creation logic
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue, // Button color
+                        backgroundColor: Colors.blue.shade600,
                         padding: EdgeInsets.symmetric(vertical: 16),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        elevation: 5,
+                      ),
+                      child: Text(
+                        'Create Account',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
                         ),
                       ),
-                      child: Text('Create Account',
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white)),
                     ),
                   ),
                 ],

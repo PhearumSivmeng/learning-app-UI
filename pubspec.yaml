@@ -39,7 +39,6 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   carousel_slider:
-  
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -63,6 +62,7 @@ flutter:
     - assets/images/e-learning.png
     - assets/images/google-icon.png
     - assets/images/facebook-logo.png
+    - assets/images/profile-picture.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

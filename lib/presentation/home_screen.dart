@@ -3,7 +3,7 @@ import 'package:learning_app/presentation/widget/category_component.dart';
 import 'package:learning_app/presentation/widget/certificate_card.dart';
 import 'package:learning_app/presentation/widget/slide_component.dart';
 
-class HomePage extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: Colors.blue.shade500,
+        backgroundColor: Colors.blue.shade300,
         // Custom leading icon for the back button
         leading: IconButton(
           icon: Icon(
@@ -45,76 +45,15 @@ class HomePage extends StatelessWidget {
               padding: EdgeInsets.only(left: 5),
               scrollDirection: Axis.horizontal,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue.shade500,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                            8.0), // Change the radius here
-                      ),
-                      // Background color
-                    ),
-                    child: Text(
-                      'Flutter',
-                      style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  SizedBox(width: 10),
-                  ElevatedButton(
-                    onPressed: () {
-                      // Handle button press
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.red.shade700, // Background color
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                            8.0), // Change the radius here
-                      ),
-                    ),
-                    child: Text(
-                      'Laravel',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 10),
-                  ElevatedButton(
-                    onPressed: () {
-                      // Handle button press
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.orange.shade700,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                            8.0), // Change the radius here
-                      ), // Background color
-                    ),
-                    child: Text('React-Js',
-                        style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold)),
-                  ),
-                  SizedBox(width: 10),
-                  ElevatedButton(
-                    onPressed: () {
-                      // Handle button press
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green.shade500,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                            8.0), // Change the radius here
-                      ), // Background color
-                    ),
-                    child: Text('Vue-js',
-                        style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold)),
-                  ),
+                  _buildTechnologyButton(
+                      context, 'Flutter', Colors.blue.shade500),
+                  _buildTechnologyButton(
+                      context, 'Laravel', Colors.red.shade700),
+                  _buildTechnologyButton(
+                      context, 'React-Js', Colors.orange.shade700),
+                  _buildTechnologyButton(
+                      context, 'Vue-js', Colors.green.shade500),
                 ],
               ),
             ),
@@ -208,34 +147,18 @@ class HomePage extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         // Set the background color of the BottomNavigationBar
-        backgroundColor: Colors.blue.shade500,
+        backgroundColor: Colors.blue.shade300,
         // Define the items in the BottomNavigationBar
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.explore),
-            label: 'Explore',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.people),
-            label: 'Community',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.book),
-            label: 'Learn',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.explore), label: 'Explore'),
+          BottomNavigationBarItem(icon: Icon(Icons.people), label: 'Community'),
+          BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Learn'),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
         currentIndex: 0, // Set the initial selected item
-        selectedItemColor: Colors.white, // Set the color for the selected item
-        unselectedItemColor: Colors.white.withOpacity(
-            0.7), // Set color for unselected items with some transparency for visual effect
+        selectedItemColor: Colors.black, // Set the color for the selected item
+        unselectedItemColor: Colors.white,
         onTap: (index) {
           // Handle item tap here
           print("Tapped on index: $index");

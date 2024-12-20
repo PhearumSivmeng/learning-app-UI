@@ -14,13 +14,14 @@ class CategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Colors.white,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(5),
       ),
-      margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+      margin: EdgeInsets.symmetric(vertical: 5, horizontal: 16),
       elevation: 2,
       child: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(10.0),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -28,8 +29,8 @@ class CategoryCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
               child: Image.asset(
                 imageUrl,
-                width: 50,
-                height: 50,
+                width: 75,
+                height: 75,
                 fit: BoxFit.cover,
               ),
             ),

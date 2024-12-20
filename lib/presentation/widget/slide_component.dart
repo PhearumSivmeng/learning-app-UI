@@ -3,10 +3,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 
 class CarouselExample extends StatelessWidget {
   final List<String> images = [
-    'https://via.placeholder.com/600x400?text=Slide+1',
-    'https://via.placeholder.com/600x400?text=Slide+2',
-    'https://via.placeholder.com/600x400?text=Slide+3',
-    'https://via.placeholder.com/600x400?text=Slide+4',
+    'https://www.simplilearn.com/ice9/free_resources_article_thumb/What_is_Data_Analysis.jpg',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNPJJqYm740HTSHZu-hNUdF8Gp1Ih1JswphQ&s',
+    'https://psomba.com/wp-content/uploads/2024/08/business-analytist.jpg',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAU3e5xiEUmtCmtK48BMmOPEI1rzKgg7uDqQ&s'
   ];
 
   @override
@@ -14,12 +14,11 @@ class CarouselExample extends StatelessWidget {
     return Center(
       child: CarouselSlider(
         options: CarouselOptions(
-          height: 350.0,
+          height: 230.0,
           enlargeCenterPage: true,
-          autoPlay: true,
           aspectRatio: 16 / 9,
-          autoPlayInterval: Duration(seconds: 3),
-          autoPlayAnimationDuration: Duration(milliseconds: 800),
+          autoPlayInterval: Duration(seconds: 5),
+          autoPlayAnimationDuration: Duration(milliseconds: 1000),
           autoPlayCurve: Curves.fastOutSlowIn,
           enableInfiniteScroll: true,
           viewportFraction: 0.8,

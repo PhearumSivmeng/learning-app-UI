@@ -3,9 +3,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class BuildTechnologyButton extends StatelessWidget {
-
-  
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -13,13 +10,13 @@ class BuildTechnologyButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () {},
         style: ElevatedButton.styleFrom(
-          backgroundColor: color,
+          backgroundColor: Colors.black,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.0),
           ),
         ),
         child: Text(
-          label,
+          "",
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
